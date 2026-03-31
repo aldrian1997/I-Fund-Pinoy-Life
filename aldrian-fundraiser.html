@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Aldrian Recover from Dengue | I Fund Pinoy Life</title>
+  <meta name="description" content="Nicyl Loyola is raising $2,000 to pay her son Aldrian's hospitalization bill after he was admitted for dengue. Every donation helps bring him home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white:      #ffffff;
+      --off-white:  #f6f6f5;
+      --light:      #eeeeec;
+      --border:     #e0deda;
+      --border-lt:  #eae8e4;
+      --muted:      #8a8680;
+      --body:       #44403c;
+      --heading:    #18160f;
+      --blue:       #1a56a0;
+      --blue-lt:    #edf3fb;
+      --blue-dk:    #133d76;
+      --green:      #1a6040;
+      --green-lt:   #eaf4ef;
+      --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md:  0 6px 24px rgba(0,0,0,0.1);
+      --radius:     12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--off-white);
+      color: var(--body);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    .nav {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      height: 58px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 32px; height: 32px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.2; }
+    .nav-logo-name { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--heading); line-height: 1; }
+    .nav-logo-sub  { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
+    .nav-secure { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+    .nav-secure svg { width: 12px; height: 12px; stroke: var(--muted); fill: none; stroke-width: 2; }
+
+    /* PAGE */
+    .page { max-width: 1060px; margin: 0 auto; padding: 28px 16px 80px; }
+    @media(min-width: 860px){ .page { padding: 40px 28px 80px; } }
+    .layout { display: flex; flex-direction: column; gap: 20px; }
+    @media(min-width: 860px){
+      .layout { flex-direction: row; align-items: start; gap: 36px; }
+      .main-col { flex: 1; min-width: 0; }
+      .sidebar  { width: 360px; flex-shrink: 0; position: sticky; top: 72px; }
+    }
+
+    /* CARD */
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+    /* TITLE BLOCK */
+    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 800; color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 18px; }
+
+    /* ORGANIZER */
+    .organizer { display: flex; align-items: center; gap: 14px; padding: 14px 18px; margin-bottom: 14px; }
+    .org-av { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-lt); border: 1.5px solid #c5d9f2; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--blue); flex-shrink: 0; }
+    .org-name { font-weight: 700; font-size: 14px; color: var(--heading); }
+    .org-sub  { font-size: 12px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 4px; }
+    .org-sub svg { width: 11px; height: 11px; stroke: var(--green); fill: none; stroke-width: 2.4; }
+    .org-verified { font-size: 11px; color: var(--green); font-weight: 600; }
+
+    /* TRUST */
+    .trust-bar { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+    .trust-badge { display: flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 11.5px; font-weight: 500; color: var(--body); }
+    .trust-badge svg { width: 12px; height: 12px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+    /* PROGRESS */
+    .progress-box { padding: 22px; }
+    .raised-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+    .raised-amount { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 800; color: var(--heading); }
+    .raised-of { font-size: 14px; color: var(--muted); }
+    .raised-sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .track { height: 9px; background: var(--light); border-radius: 100px; overflow: hidden; margin-bottom: 16px; }
+    .track-fill { height: 100%; width: 0%; background: var(--blue); border-radius: 100px; transition: width 1.6s cubic-bezier(.16,1,.3,1); }
+    .pstats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border-lt); padding-top: 14px; }
+    .pstat { padding: 0 8px; }
+    .pstat:first-child { padding-left: 0; }
+    .pstat + .pstat { border-left: 1px solid var(--border-lt); }
+    .pstat-val   { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--heading); display: block; }
+    .pstat-label { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+    /* STORY */
+    .story-box { padding: 26px 22px; }
+    @media(min-width: 860px){ .story-box { padding: 30px 30px; } }
+    .sec-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: var(--heading); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border-lt); }
+    .story-lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--heading); line-height: 1.75; margin-bottom: 20px; padding: 14px 16px; background: var(--blue-lt); border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; }
+    .story-box p { font-size: 15px; line-height: 1.9; color: var(--body); margin-bottom: 16px; }
+    .story-box p:last-child { margin-bottom: 0; }
+    .story-box strong { color: var(--heading); font-weight: 600; }
+
+    /* FAQ */
+    .faq-box { padding: 22px; }
+    .faq-item { padding: 13px 0; border-bottom: 1px solid var(--border-lt); }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-q { font-size: 14px; font-weight: 700; color: var(--heading); margin-bottom: 5px; }
+    .faq-a { font-size: 14px; color: var(--body); line-height: 1.75; }
+
+    /* MESSAGES */
+    .messages-box { padding: 22px; }
+    .msg-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; }
+    .msg-item { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--border-lt); animation: fadein 0.3s ease; }
+    @keyframes fadein { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+    .msg-item:first-child { padding-top: 0; }
+    .msg-item:last-child  { border-bottom: none; }
+    .msg-av { width: 34px; height: 34px; border-radius: 50%; background: var(--blue-lt); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: var(--blue); flex-shrink: 0; }
+    .msg-right { flex: 1; min-width: 0; }
+    .msg-top { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .msg-name { font-weight: 600; font-size: 13.5px; color: var(--heading); }
+    .msg-amt  { font-weight: 700; font-size: 12.5px; color: var(--blue); white-space: nowrap; }
+    .msg-when { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .msg-text { font-size: 13.5px; color: var(--body); margin-top: 6px; line-height: 1.65; font-style: italic; border-left: 2px solid var(--border); padding-left: 10px; }
+    .msg-placeholder { font-size: 14px; color: var(--muted); }
+
+    /* DONATE CARD */
+    .donate-card { padding: 22px; box-shadow: var(--shadow-md) !important; }
+    .donate-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--heading); margin-bottom: 4px; }
+    .donate-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .field-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 7px; }
+    .amt-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-bottom: 14px; }
+    .amt-btn {
+      border: 1.5px solid var(--border); background: var(--off-white);
+      border-radius: 8px; padding: 11px 4px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+      color: var(--body); cursor: pointer; text-align: center;
+      transition: all 0.15s; -webkit-tap-highlight-color: transparent;
+    }
+    .amt-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
+    .amt-btn.active { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
+    .field-row { display: flex; align-items: center; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--white); transition: border-color 0.15s; margin-bottom: 16px; }
+    .field-row:focus-within { border-color: var(--blue); }
+    .field-prefix { padding: 0 12px; font-size: 14px; font-weight: 600; color: var(--body); background: var(--light); border-right: 1.5px solid var(--border); height: 44px; display: flex; align-items: center; flex-shrink: 0; }
+    .field-row input { flex:1; border:none; outline:none; background:transparent; padding:0 12px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:var(--heading); height:44px; }
+    .field-row input::placeholder { color: var(--muted); }
+    .field-solo { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; background:var(--white); transition:border-color 0.15s; }
+    .field-solo:focus-within { border-color: var(--blue); }
+    .field-solo input { flex:1; border:none; outline:none; background:transparent; padding:0 12px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:var(--heading); height:44px; }
+    .field-solo input::placeholder { color: var(--muted); }
+    .name-anon { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; margin-bottom:16px; }
+    .anon-label { display:flex; align-items:center; gap:5px; font-size:13px; color:var(--muted); cursor:pointer; white-space:nowrap; }
+    .anon-label input[type="checkbox"] { accent-color: var(--blue); width:14px; height:14px; cursor:pointer; }
+    .msg-textarea { width:100%; border:1.5px solid var(--border); border-radius:8px; padding:11px 13px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--body); background:var(--white); resize:vertical; min-height:76px; max-height:140px; outline:none; line-height:1.6; transition:border-color 0.15s; margin-bottom:20px; }
+    .msg-textarea:focus { border-color: var(--blue); }
+    .msg-textarea::placeholder { color: var(--muted); }
+    #paypal-button-container { min-height: 46px; }
+    .paypal-placeholder { border:1px dashed var(--border); border-radius:8px; padding:16px; text-align:center; font-size:13px; color:var(--muted); line-height:1.6; }
+    .secure-note { margin-top:12px; text-align:center; font-size:11px; color:var(--muted); display:flex; align-items:center; justify-content:center; gap:5px; }
+    .secure-note svg { width:11px; height:11px; stroke:var(--muted); fill:none; stroke-width:2; }
+
+    /* INFO CARD */
+    .info-card { padding: 16px 18px; }
+    .info-card p { font-size:13px; color:var(--muted); line-height:1.7; }
+    .info-card p + p { margin-top:8px; }
+
+    /* TOAST */
+    .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(70px); padding:12px 22px; border-radius:8px; font-size:14px; font-weight:500; z-index:999; box-shadow:0 4px 20px rgba(0,0,0,0.18); transition:transform 0.35s cubic-bezier(.16,1,.3,1); white-space:nowrap; background:var(--heading); color:#fff; max-width:calc(100vw - 32px); text-align:center; }
+    .toast.success { background: var(--green); }
+    .toast.error   { background: #b33030; }
+    .toast.show    { transform: translateX(-50%) translateY(0); }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo" aria-label="I Fund Pinoy Life Home">
+    <div class="nav-logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.454 4.068 1 7.5 1c1.977 0 3.848 1.002 4.5 2.5C12.652 2.002 14.523 1 16.5 1 19.932 1 23 3.454 23 7.191c0 4.105-5.37 8.863-11 14.402z"/></svg>
+    </div>
+    <div class="nav-logo-name">
+      I Fund Pinoy Life
+      <span class="nav-logo-sub">Fundraising for Personal Causes</span>
+    </div>
+  </a>
+  <div class="nav-secure">
+    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Secured by PayPal
+  </div>
+</header>
+
+<!-- PAGE -->
+<main class="page" id="main-content" role="main">
+  <div class="layout">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <p class="page-eyebrow">Medical Fundraiser</p>
+      <h1 class="page-title">Help Aldrian Recover from Dengue and Come Home</h1>
+
+      <!-- Organizer -->
+      <div class="card organizer" role="region" aria-label="Organizer">
+        <div class="org-av" aria-hidden="true">N</div>
+        <div>
+          <div class="org-name">Nicyl Loyola</div>
+          <div class="org-sub">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="org-verified">Verified by I Fund Pinoy Life</span>
+            &nbsp;·&nbsp; Organizer and Aldrian's Mother
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust -->
+      <div class="trust-bar" role="region" aria-label="Trust indicators">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          PayPal Protected
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Identity Verified
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          SSL Encrypted
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Hospital Docs on File
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <section class="card progress-box" aria-label="Fundraising progress">
+        <div class="raised-row">
+          <div class="raised-amount" id="raised-display">$0</div>
+          <div class="raised-of">raised of $2,000 goal</div>
+        </div>
+        <div class="raised-sub">from <strong id="donor-count">0</strong> donors</div>
+        <div class="track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
+          <div class="track-fill" id="track-fill"></div>
+        </div>
+        <div class="pstats">
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-donors">0</span>
+            <span class="pstat-label">Donors</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-avg">$0</span>
+            <span class="pstat-label">Avg. Gift</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-left">$2,000</span>
+            <span class="pstat-label">Still Needed</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <article class="card story-box" aria-label="Fundraiser story">
+        <h2 class="sec-title">Aldrian's Story</h2>
+
+        <div class="story-lead" role="note">
+          "My name is Nicyl Loyola. I am Aldrian's mother. He is in the hospital right now with dengue and I cannot afford to pay the bill. I am asking for your help."
+        </div>
+
+        <p>Aldrian is my eldest son. He has always been the responsible one in our family. He works hard, he does not complain, and he has always looked out for his younger siblings. That is just who he is.</p>
+
+        <p>A few days ago, Aldrian came home with a high fever that would not go away. We brought him to the hospital and the doctors confirmed he has dengue. His platelet count dropped quickly and he needed to be admitted right away. He is being monitored and treated, and we are praying for his recovery every day.</p>
+
+        <p><strong>The hospital bill has been growing and I do not have the means to pay it.</strong> I work to support our family but what I earn is not enough for something like this. I have already spent what little we had. The hospital is waiting for payment, and I cannot bring my son home until that is settled.</p>
+
+        <p>I did not want to ask for help. But I have no other choice right now and I want to do right by my son. He has always worked hard for this family and I want to be there for him the same way.</p>
+
+        <p><strong>The goal is $2,000</strong>, which covers the full hospital bill including his room, medicines, IV fluids, blood tests, and doctor's fees. Every dollar you give goes directly to bringing Aldrian home.</p>
+
+        <p>If you cannot give, please share this page. It costs nothing and it might reach someone who can help. Thank you for reading this. God bless you.</p>
+      </article>
+
+      <!-- FAQ -->
+      <section class="card faq-box" aria-label="Frequently asked questions">
+        <h2 class="sec-title">Common Questions</h2>
+        <div class="faq-item">
+          <div class="faq-q">Is this fundraiser verified?</div>
+          <div class="faq-a">Yes. I Fund Pinoy Life has verified Nicyl Loyola's identity and reviewed the hospital admission documents for Aldrian. This campaign is genuine.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where does the money go?</div>
+          <div class="faq-a">All donations go directly to paying Aldrian's hospitalization bill. Funds are released to the family to settle the hospital account. Nothing is kept by I Fund Pinoy Life beyond PayPal's standard processing fee.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I donate from outside the Philippines?</div>
+          <div class="faq-a">Yes. PayPal accepts donations from most countries. The goal is in US dollars and PayPal will handle the currency conversion from your local currency automatically.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I donate anonymously?</div>
+          <div class="faq-a">Yes. Check the Anonymous box in the form below and your name will not appear publicly on this page.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Will I get a receipt?</div>
+          <div class="faq-a">Yes. PayPal sends an automatic confirmation and receipt to your email address immediately after each completed donation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if the goal is exceeded?</div>
+          <div class="faq-a">Any amount raised beyond $2,000 will go toward Aldrian's follow-up medications and recovery needs after discharge. Nothing extra is kept by I Fund Pinoy Life.</div>
+        </div>
+      </section>
+
+      <!-- Messages -->
+      <section class="card messages-box" aria-label="Words of support">
+        <h2 class="sec-title">Words of Support</h2>
+        <p class="msg-meta" id="msg-meta">Loading...</p>
+        <div id="messages-feed">
+          <p class="msg-placeholder" id="msg-loader">Fetching messages...</p>
+        </div>
+      </section>
+
+    </div>
+    <!-- end main-col -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" role="complementary" aria-label="Donation form">
+
+      <div class="card donate-card">
+        <div class="donate-title">Help Aldrian Come Home</div>
+        <div class="donate-sub">Goal: $2,000 for his full hospital bill.</div>
+
+        <label class="field-label" id="amt-label">Choose an amount</label>
+        <div class="amt-grid" role="group" aria-labelledby="amt-label">
+          <button class="amt-btn" data-amount="5"   onclick="selectAmt(5)"   aria-pressed="false">$5</button>
+          <button class="amt-btn" data-amount="10"  onclick="selectAmt(10)"  aria-pressed="false">$10</button>
+          <button class="amt-btn active" data-amount="25" onclick="selectAmt(25)" aria-pressed="true">$25</button>
+          <button class="amt-btn" data-amount="50"  onclick="selectAmt(50)"  aria-pressed="false">$50</button>
+          <button class="amt-btn" data-amount="100" onclick="selectAmt(100)" aria-pressed="false">$100</button>
+          <button class="amt-btn" data-amount="200" onclick="selectAmt(200)" aria-pressed="false">$200</button>
+        </div>
+
+        <label class="field-label" for="custom-amt">Or enter a custom amount</label>
+        <div class="field-row">
+          <span class="field-prefix" aria-hidden="true">$</span>
+          <input type="number" id="custom-amt" min="1" placeholder="Other amount" oninput="onCustom(this)" aria-label="Custom donation amount in USD" inputmode="decimal">
+        </div>
+
+        <label class="field-label" for="donor-name">Your name</label>
+        <div class="name-anon">
+          <div class="field-solo">
+            <input type="text" id="donor-name" placeholder="Full name" maxlength="60" aria-label="Your name" autocomplete="name">
+          </div>
+          <label class="anon-label">
+            <input type="checkbox" id="anon-check" onchange="toggleAnon(this)" aria-label="Donate anonymously"> Anonymous
+          </label>
+        </div>
+
+        <label class="field-label" for="donor-message">Leave a message (optional)</label>
+        <textarea class="msg-textarea" id="donor-message" maxlength="300" placeholder="A kind word for Nicyl and Aldrian..." aria-label="Your message"></textarea>
+
+        <div id="paypal-button-container" aria-label="PayPal donate button"></div>
+
+        <div class="secure-note">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure checkout via PayPal. No card info stored.
+        </div>
+      </div>
+
+      <div class="card info-card">
+        <p>All donations are processed securely through PayPal. Funds go directly to Nicyl Loyola to pay Aldrian's hospital bill.</p>
+        <p>This fundraiser is verified and managed by <strong>I Fund Pinoy Life</strong>. For questions, email <a href="mailto:info@ifundpinoy.life" style="color:var(--blue);text-decoration:none;font-weight:600;">info@ifundpinoy.life</a> or call <a href="tel:0283515854" style="color:var(--blue);text-decoration:none;font-weight:600;">02 8351 5854</a>.</p>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AU2dIEmU4vxPd0Nz8ZG_M1Ra72J2xzQ4AsIoTPvdOoR5YZFu9twWdCIogu92h8shsXCfajJNSePeAHyo&currency=USD&intent=capture"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const PAYPAL_CLIENT_ID  = 'AU2dIEmU4vxPd0Nz8ZG_M1Ra72J2xzQ4AsIoTPvdOoR5YZFu9twWdCIogu92h8shsXCfajJNSePeAHyo';
+const SUPABASE_URL      = 'https://kepacvqcqfdmxyrjvobp.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlcGFjdnFjcWZkbXh5cmp2b2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyMjI1MDEsImV4cCI6MjA4OTc5ODUwMX0.GgcGAoCVa0ilBSCtVg9HKP43-j5Wfv-nqPLm1_x5qUY';
+const GOAL = 2000;
+
+let db = null, selectedAmount = 25, rtTotal = 0, rtCount = 0, msgCount = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+  initDB(); loadStats(); loadMessages(); initPayPal(); selectAmt(25);
+});
+
+function initDB() {
+  try { db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e) {}
+}
+
+async function loadStats() {
+  if (!db) { renderStats(0, 0); return; }
+  try {
+    const { data, error } = await db.from('donations').select('amount').eq('status','completed');
+    if (error) throw error;
+    rtTotal = data ? data.reduce((s,r) => s + Number(r.amount), 0) : 0;
+    rtCount = data ? data.length : 0;
+    renderStats(rtTotal, rtCount);
+    subscribeRealtime();
+  } catch(e) { renderStats(0, 0); }
+}
+
+function renderStats(total, count) {
+  const avg  = count > 0 ? Math.round(total / count) : 0;
+  const left = Math.max(GOAL - total, 0);
+  const pct  = total > 0 ? Math.max(Math.min(Math.round((total / GOAL) * 100), 100), 2) : 0;
+  document.getElementById('raised-display').textContent = '$' + total.toLocaleString('en-US');
+  document.getElementById('donor-count').textContent    = count.toLocaleString();
+  document.getElementById('pstat-donors').textContent   = count.toLocaleString();
+  document.getElementById('pstat-avg').textContent      = '$' + avg.toLocaleString('en-US');
+  document.getElementById('pstat-left').textContent     = '$' + left.toLocaleString('en-US');
+  document.querySelector('.track').setAttribute('aria-valuenow', pct);
+  requestAnimationFrame(() => setTimeout(() => { document.getElementById('track-fill').style.width = pct + '%'; }, 300));
+}
+
+function subscribeRealtime() {
+  if (!db) return;
+  db.channel('donations_rt_' + Date.now())
+    .on('postgres_changes', { event:'INSERT', schema:'public', table:'donations' }, payload => {
+      const row = payload.new;
+      if (row.status !== 'completed') return;
+      rtTotal += Number(row.amount); rtCount += 1;
+      renderStats(rtTotal, rtCount);
+      if (row.message && row.message.trim()) { prependMessage(row); msgCount++; updateMsgMeta(); }
+    }).subscribe();
+}
+
+async function loadMessages() {
+  const feed = document.getElementById('messages-feed');
+  const loader = document.getElementById('msg-loader');
+  const meta = document.getElementById('msg-meta');
+  if (!db) { if (loader) loader.textContent = 'Connect Supabase to display donor messages.'; meta.textContent = ''; return; }
+  try {
+    const { data, error } = await db.from('donations').select('donor_name,amount,message,created_at').eq('status','completed').not('message','is',null).neq('message','').order('created_at',{ascending:false}).limit(30);
+    if (error) throw error;
+    if (loader) loader.remove();
+    if (!data || data.length === 0) {
+      msgCount = 0; updateMsgMeta();
+      feed.innerHTML = '<p class="msg-placeholder">Be the first to leave a message of support for Nicyl and Aldrian.</p>';
+      return;
+    }
+    msgCount = data.length; updateMsgMeta();
+    data.forEach(d => feed.appendChild(buildMsg(d)));
+  } catch(e) { if (loader) loader.textContent = 'Messages could not be loaded.'; meta.textContent = ''; }
+}
+
+function updateMsgMeta() {
+  document.getElementById('msg-meta').textContent = msgCount === 0 ? 'No messages yet.' : msgCount + ' message' + (msgCount !== 1 ? 's' : '');
+}
+
+function prependMessage(d) {
+  const feed = document.getElementById('messages-feed');
+  const empty = feed.querySelector('.msg-placeholder');
+  if (empty) empty.remove();
+  feed.insertBefore(buildMsg(d), feed.firstChild);
+}
+
+function buildMsg(d) {
+  const name = d.donor_name || 'Anonymous';
+  const el = document.createElement('div');
+  el.className = 'msg-item'; el.setAttribute('role','article');
+  el.innerHTML = `
+    <div class="msg-av" aria-hidden="true">${esc(name.trim()[0].toUpperCase())}</div>
+    <div class="msg-right">
+      <div class="msg-top">
+        <span class="msg-name">${esc(name)}</span>
+        <span class="msg-amt">$${Number(d.amount).toLocaleString()}</span>
+      </div>
+      <div class="msg-when">${timeAgo(d.created_at)}</div>
+      ${d.message ? `<div class="msg-text">${esc(d.message)}</div>` : ''}
+    </div>`;
+  return el;
+}
+
+function selectAmt(amt) {
+  selectedAmount = amt;
+  document.getElementById('custom-amt').value = '';
+  document.querySelectorAll('.amt-btn').forEach(b => {
+    const active = parseInt(b.dataset.amount) === amt;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function onCustom(input) {
+  const val = parseFloat(input.value);
+  if (val > 0) {
+    selectedAmount = val;
+    document.querySelectorAll('.amt-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  }
+}
+
+function toggleAnon(cb) {
+  const f = document.getElementById('donor-name');
+  f.disabled = cb.checked; if (cb.checked) f.value = '';
+}
+
+function initPayPal() {
+  const container = document.getElementById('paypal-button-container');
+  if (typeof paypal === 'undefined') {
+    container.innerHTML = '<div class="paypal-placeholder">PayPal is loading. If this persists, please check your connection.</div>';
+    return;
+  }
+  paypal.Buttons({
+    style: { layout:'vertical', color:'blue', shape:'rect', label:'donate', height:46 },
+    createOrder: (data, actions) => {
+      const amt = parseFloat(selectedAmount);
+      if (!amt || amt < 1) { showToast('Please select or enter a valid amount.', 'error'); return Promise.reject(); }
+      return actions.order.create({
+        purchase_units: [{ description: "Aldrian's Hospital Bill", amount: { value: amt.toFixed(2), currency_code: 'USD' } }],
+        application_context: { shipping_preference: 'NO_SHIPPING' }
+      });
+    },
+    onApprove: async (data, actions) => {
+      const order  = await actions.order.capture();
+      const amount = parseFloat(order.purchase_units[0].amount.value);
+      const isAnon = document.getElementById('anon-check').checked;
+      const name   = isAnon ? 'Anonymous' : (document.getElementById('donor-name').value.trim() || 'Anonymous');
+      const msg    = document.getElementById('donor-message').value.trim();
+      await saveDonation({ order_id: order.id, amount, donor_name: name, message: msg || null, status: 'completed' });
+      showToast('Salamat! Thank you for your donation.', 'success');
+      document.getElementById('donor-name').value    = '';
+      document.getElementById('donor-message').value = '';
+      document.getElementById('anon-check').checked  = false;
+      document.getElementById('donor-name').disabled = false;
+    },
+    onError:  err => { console.error(err); showToast('Something went wrong. Please try again.', 'error'); },
+    onCancel: ()  => showToast('Donation cancelled.', '')
+  }).render('#paypal-button-container');
+}
+
+async function saveDonation(row) {
+  if (!db) return;
+  try { const { error } = await db.from('donations').insert([row]); if (error) console.warn(error.message); }
+  catch(e) { console.warn('Save failed:', e); }
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast ' + (type || '');
+  t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 4500);
+}
+
+function timeAgo(ts) {
+  if (!ts) return '';
+  const s = (Date.now() - new Date(ts)) / 1000;
+  if (s < 60) return 'Just now';
+  if (s < 3600) return Math.floor(s/60) + ' min ago';
+  if (s < 86400) return Math.floor(s/3600) + ' hr ago';
+  return Math.floor(s/86400) + ' days ago';
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
