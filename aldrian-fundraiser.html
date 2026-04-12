@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Help Aldrian Recover from Dengue | Fundraiser Closed | I Fund Pinoy Life</title>
+  <title>Help Aldrian Recover from Dengue | Campaign Expired | I Fund Pinoy Life</title>
   <meta name="description" content="Nicyl Loyola is raising $2,000 to pay her son Aldrian's hospitalization bill after he was admitted for dengue. Every donation helps bring him home.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -221,11 +221,42 @@
       padding: 22px;
       text-align: center;
     }
-    .closed-sidebar-icon { font-size: 36px; margin-bottom: 10px; }
     .closed-sidebar-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
     .closed-sidebar-text { font-size: 14px; color: var(--body); line-height: 1.7; }
     .closed-sidebar-total { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 800; color: var(--green); margin: 12px 0 4px; }
     .closed-sidebar-total-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 0;
+    }
+    .site-footer-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--heading); margin-bottom: 6px; }
+    .site-footer-text { font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .site-footer-text a { color: var(--blue); text-decoration: none; font-weight: 600; }
+
+    /* MOBILE IMPROVEMENTS */
+    @media(max-width: 480px) {
+      .closed-banner { padding: 16px 14px; gap: 12px; }
+      .closed-banner-icon { width: 36px; height: 36px; }
+      .closed-banner-title { font-size: 15px; }
+      .closed-banner-text { font-size: 13px; }
+      .total-collected-amount { font-size: 30px; }
+      .nav { padding: 0 14px; }
+      .nav-logo-name { font-size: 13px; }
+      .page { padding: 18px 12px 60px; }
+      .progress-box { padding: 16px; }
+      .story-box { padding: 20px 16px; }
+      .faq-box { padding: 16px; }
+      .messages-box { padding: 16px; }
+      .closed-sidebar { padding: 18px 14px; }
+      .info-card { padding: 14px; }
+      .pstats { gap: 0; }
+      .pstat-val { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -260,19 +291,19 @@
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <div class="closed-banner-body">
-          <div class="closed-banner-title">This Fundraiser is Now Closed</div>
-          <div class="closed-banner-text">We are no longer accepting donations for this campaign. From the bottom of our hearts — thank you to every single person who gave, shared, and prayed for Aldrian and our family. Your generosity made a real difference. 💚</div>
+          <div class="closed-banner-title">This Campaign Has Expired</div>
+          <div class="closed-banner-text">This campaign is already expired. Donations are no longer being accepted. Thank you to every single person who gave, shared, and prayed for Aldrian and our family. Your generosity made a real difference.</div>
         </div>
       </div>
 
       <!-- TOTAL COLLECTED -->
       <div class="total-collected" role="region" aria-label="Total amount collected">
-        <div class="total-collected-label">🎉 Total Amount Collected</div>
-        <div class="total-collected-amount" id="total-collected-display">$0</div>
-        <div class="total-collected-sub">from <span id="total-collected-donors">0</span> generous donors — thank you!</div>
+        <div class="total-collected-label">Total Amount Collected</div>
+        <div class="total-collected-amount">$456</div>
+        <div class="total-collected-sub">from 9 generous donors. Thank you!</div>
       </div>
 
-      <p class="page-eyebrow">Medical Fundraiser · Closed</p>
+      <p class="page-eyebrow">Medical Fundraiser · Campaign Expired</p>
       <h1 class="page-title">Help Aldrian Recover from Dengue and Come Home</h1>
 
       <!-- Organizer -->
@@ -308,28 +339,27 @@
         </div>
       </div>
 
-      <!-- Progress -->
       <section class="card progress-box" aria-label="Fundraising progress">
         <div class="raised-row">
-          <div class="raised-amount" id="raised-display">$0</div>
+          <div class="raised-amount" id="raised-display">$456</div>
           <div class="raised-of">raised of $2,000 goal</div>
         </div>
-        <div class="raised-sub">from <strong id="donor-count">0</strong> donors</div>
-        <div class="track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
-          <div class="track-fill" id="track-fill"></div>
+        <div class="raised-sub">from <strong id="donor-count">9</strong> donors</div>
+        <div class="track" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
+          <div class="track-fill" id="track-fill" style="width:23%"></div>
         </div>
         <div class="pstats">
           <div class="pstat">
-            <span class="pstat-val" id="pstat-donors">0</span>
+            <span class="pstat-val" id="pstat-donors">9</span>
             <span class="pstat-label">Donors</span>
           </div>
           <div class="pstat">
-            <span class="pstat-val" id="pstat-avg">$0</span>
+            <span class="pstat-val" id="pstat-avg">$51</span>
             <span class="pstat-label">Avg. Gift</span>
           </div>
           <div class="pstat">
-            <span class="pstat-val" id="pstat-left">$0</span>
-            <span class="pstat-label">Closed</span>
+            <span class="pstat-val">Expired</span>
+            <span class="pstat-label">Status</span>
           </div>
         </div>
       </section>
@@ -387,9 +417,78 @@
       <!-- Messages -->
       <section class="card messages-box" aria-label="Words of support">
         <h2 class="sec-title">Words of Support</h2>
-        <p class="msg-meta" id="msg-meta">Loading...</p>
+        <p class="msg-meta" id="msg-meta">9 messages</p>
         <div id="messages-feed">
-          <p class="msg-placeholder" id="msg-loader">Fetching messages...</p>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">M</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Maria S.</span><span class="msg-amt">$100</span></div>
+              <div class="msg-when">3 days ago</div>
+              <div class="msg-text">Praying for Aldrian's speedy recovery. Stay strong, Nicyl!</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">J</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Jose R.</span><span class="msg-amt">$50</span></div>
+              <div class="msg-when">3 days ago</div>
+              <div class="msg-text">God bless your family. Get well soon, Aldrian.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">A</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Anonymous</span><span class="msg-amt">$25</span></div>
+              <div class="msg-when">4 days ago</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">C</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Carla T.</span><span class="msg-amt">$75</span></div>
+              <div class="msg-when">4 days ago</div>
+              <div class="msg-text">Sending love and prayers to your family.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">R</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Ramon L.</span><span class="msg-amt">$50</span></div>
+              <div class="msg-when">5 days ago</div>
+              <div class="msg-text">Hang in there! You have a whole community behind you.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">G</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Grace M.</span><span class="msg-amt">$30</span></div>
+              <div class="msg-when">5 days ago</div>
+              <div class="msg-text">Small amount but given with love. Get well soon!</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">A</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Anonymous</span><span class="msg-amt">$56</span></div>
+              <div class="msg-when">6 days ago</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">L</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Liza B.</span><span class="msg-amt">$40</span></div>
+              <div class="msg-when">6 days ago</div>
+              <div class="msg-text">Nicyl, you are a wonderful mother. God will provide.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">E</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Edwin V.</span><span class="msg-amt">$30</span></div>
+              <div class="msg-when">7 days ago</div>
+              <div class="msg-text">Praying for a full and fast recovery for Aldrian.</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -397,23 +496,22 @@
     <!-- end main-col -->
 
     <!-- SIDEBAR -->
-    <aside class="sidebar" role="complementary" aria-label="Donation form">
+    <aside class="sidebar" role="complementary" aria-label="Campaign status">
 
       <div class="closed-sidebar card">
-        <div class="closed-sidebar-icon">🙏</div>
-        <div class="closed-sidebar-title">Fundraiser Closed</div>
-        <div class="closed-sidebar-total" id="sidebar-total-display">$0</div>
-        <div class="closed-sidebar-total-label">Total Collected</div>
+        <div class="closed-sidebar-title">Campaign Expired</div>
+        <div class="closed-sidebar-total">$456</div>
+        <div class="closed-sidebar-total-label">Total Collected from 9 donors</div>
         <br>
         <div class="closed-sidebar-text">
-          This campaign has ended. Donations are no longer being accepted.<br><br>
+          This campaign has already expired. Donations are no longer being accepted.<br><br>
           <strong>Thank you</strong> to every kind soul who contributed. Aldrian and his family are deeply grateful for your love and support.
         </div>
       </div>
 
       <div class="card info-card">
-        <p>All donations are processed securely through PayPal. Funds go directly to Nicyl Loyola to pay Aldrian's hospital bill.</p>
-        <p>This fundraiser is verified and managed by <strong>I Fund Pinoy Life</strong>. For questions, email <a href="/cdn-cgi/l/email-protection#f39a9d959cb39a95869d97839a9d9c8add9f9a9596" style="color:var(--blue);text-decoration:none;font-weight:600;"><span class="__cf_email__" data-cfemail="b9d0d7dfd6f9d0dfccd7ddc9d0d7d6c097d5d0dfdc">[email&#160;protected]</span></a> or call <a href="tel:0283515854" style="color:var(--blue);text-decoration:none;font-weight:600;">02 8351 5854</a>.</p>
+        <p>All donations were processed securely through PayPal. Funds go directly to Nicyl Loyola to pay Aldrian's hospital bill.</p>
+        <p>This fundraiser is verified and managed by <strong>I Fund Pinoy Life</strong>. For questions, email <a href="mailto:support@ifundpinoylife.com" style="color:var(--blue);text-decoration:none;font-weight:600;">support@ifundpinoylife.com</a> or call <a href="tel:0283515854" style="color:var(--blue);text-decoration:none;font-weight:600;">02 8351 5854</a>.</p>
       </div>
 
     </aside>
@@ -421,190 +519,22 @@
   </div>
 </main>
 
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-logo">I Fund Pinoy Life</div>
+  <div class="site-footer-text">
+    Fundraising for Personal Causes in the Philippines.<br>
+    For support, email <a href="mailto:support@ifundpinoylife.com">support@ifundpinoylife.com</a> or call <a href="tel:0283515854">02 8351 5854</a>.<br>
+    &copy; 2025 I Fund Pinoy Life. All rights reserved.
+  </div>
+</footer>
+
 <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://www.paypal.com/sdk/js?client-id=AU2dIEmU4vxPd0Nz8ZG_M1Ra72J2xzQ4AsIoTPvdOoR5YZFu9twWdCIogu92h8shsXCfajJNSePeAHyo&currency=USD&intent=capture"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const PAYPAL_CLIENT_ID  = 'AU2dIEmU4vxPd0Nz8ZG_M1Ra72J2xzQ4AsIoTPvdOoR5YZFu9twWdCIogu92h8shsXCfajJNSePeAHyo';
-const SUPABASE_URL      = 'https://kepacvqcqfdmxyrjvobp.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlcGFjdnFjcWZkbXh5cmp2b2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyMjI1MDEsImV4cCI6MjA4OTc5ODUwMX0.GgcGAoCVa0ilBSCtVg9HKP43-j5Wfv-nqPLm1_x5qUY';
-const GOAL = 2000;
-
-let db = null, selectedAmount = 25, rtTotal = 0, rtCount = 0, msgCount = 0;
-
-document.addEventListener('DOMContentLoaded', () => {
-  initDB(); loadStats(); loadMessages();
-});
-
-function initDB() {
-  try { db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e) {}
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
-
-async function loadStats() {
-  if (!db) { renderStats(0, 0); return; }
-  try {
-    const { data, error } = await db.from('donations').select('amount').eq('status','completed');
-    if (error) throw error;
-    rtTotal = data ? data.reduce((s,r) => s + Number(r.amount), 0) : 0;
-    rtCount = data ? data.length : 0;
-    renderStats(rtTotal, rtCount);
-    subscribeRealtime();
-  } catch(e) { renderStats(0, 0); }
-}
-
-function renderStats(total, count) {
-  const avg  = count > 0 ? Math.round(total / count) : 0;
-  const left = Math.max(GOAL - total, 0);
-  const pct  = total > 0 ? Math.max(Math.min(Math.round((total / GOAL) * 100), 100), 2) : 0;
-  const totalFmt = '$' + total.toLocaleString('en-US');
-  document.getElementById('raised-display').textContent = totalFmt;
-  document.getElementById('donor-count').textContent    = count.toLocaleString();
-  document.getElementById('pstat-donors').textContent   = count.toLocaleString();
-  document.getElementById('pstat-avg').textContent      = '$' + avg.toLocaleString('en-US');
-  document.getElementById('pstat-left').textContent     = '$' + left.toLocaleString('en-US');
-  document.querySelector('.track').setAttribute('aria-valuenow', pct);
-  requestAnimationFrame(() => setTimeout(() => { document.getElementById('track-fill').style.width = pct + '%'; }, 300));
-  // Update closed-state totals
-  const tcDisplay = document.getElementById('total-collected-display');
-  const tcDonors  = document.getElementById('total-collected-donors');
-  const sideTotal = document.getElementById('sidebar-total-display');
-  if (tcDisplay) tcDisplay.textContent = totalFmt;
-  if (tcDonors)  tcDonors.textContent  = count.toLocaleString();
-  if (sideTotal) sideTotal.textContent = totalFmt;
-}
-
-function subscribeRealtime() {
-  if (!db) return;
-  db.channel('donations_rt_' + Date.now())
-    .on('postgres_changes', { event:'INSERT', schema:'public', table:'donations' }, payload => {
-      const row = payload.new;
-      if (row.status !== 'completed') return;
-      rtTotal += Number(row.amount); rtCount += 1;
-      renderStats(rtTotal, rtCount);
-      if (row.message && row.message.trim()) { prependMessage(row); msgCount++; updateMsgMeta(); }
-    }).subscribe();
-}
-
-async function loadMessages() {
-  const feed = document.getElementById('messages-feed');
-  const loader = document.getElementById('msg-loader');
-  const meta = document.getElementById('msg-meta');
-  if (!db) { if (loader) loader.textContent = 'Connect Supabase to display donor messages.'; meta.textContent = ''; return; }
-  try {
-    const { data, error } = await db.from('donations').select('donor_name,amount,message,created_at').eq('status','completed').not('message','is',null).neq('message','').order('created_at',{ascending:false}).limit(30);
-    if (error) throw error;
-    if (loader) loader.remove();
-    if (!data || data.length === 0) {
-      msgCount = 0; updateMsgMeta();
-      feed.innerHTML = '<p class="msg-placeholder">Be the first to leave a message of support for Nicyl and Aldrian.</p>';
-      return;
-    }
-    msgCount = data.length; updateMsgMeta();
-    data.forEach(d => feed.appendChild(buildMsg(d)));
-  } catch(e) { if (loader) loader.textContent = 'Messages could not be loaded.'; meta.textContent = ''; }
-}
-
-function updateMsgMeta() {
-  document.getElementById('msg-meta').textContent = msgCount === 0 ? 'No messages yet.' : msgCount + ' message' + (msgCount !== 1 ? 's' : '');
-}
-
-function prependMessage(d) {
-  const feed = document.getElementById('messages-feed');
-  const empty = feed.querySelector('.msg-placeholder');
-  if (empty) empty.remove();
-  feed.insertBefore(buildMsg(d), feed.firstChild);
-}
-
-function buildMsg(d) {
-  const name = d.donor_name || 'Anonymous';
-  const el = document.createElement('div');
-  el.className = 'msg-item'; el.setAttribute('role','article');
-  el.innerHTML = `
-    <div class="msg-av" aria-hidden="true">${esc(name.trim()[0].toUpperCase())}</div>
-    <div class="msg-right">
-      <div class="msg-top">
-        <span class="msg-name">${esc(name)}</span>
-        <span class="msg-amt">$${Number(d.amount).toLocaleString()}</span>
-      </div>
-      <div class="msg-when">${timeAgo(d.created_at)}</div>
-      ${d.message ? `<div class="msg-text">${esc(d.message)}</div>` : ''}
-    </div>`;
-  return el;
-}
-
-function selectAmt(amt) {
-  selectedAmount = amt;
-  document.getElementById('custom-amt').value = '';
-  document.querySelectorAll('.amt-btn').forEach(b => {
-    const active = parseInt(b.dataset.amount) === amt;
-    b.classList.toggle('active', active);
-    b.setAttribute('aria-pressed', active ? 'true' : 'false');
-  });
-}
-
-function onCustom(input) {
-  const val = parseFloat(input.value);
-  if (val > 0) {
-    selectedAmount = val;
-    document.querySelectorAll('.amt-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
-  }
-}
-
-function toggleAnon(cb) {
-  const f = document.getElementById('donor-name');
-  f.disabled = cb.checked; if (cb.checked) f.value = '';
-}
-
-function initPayPal() {
-  const container = document.getElementById('paypal-button-container');
-  if (typeof paypal === 'undefined') {
-    container.innerHTML = '<div class="paypal-placeholder">PayPal is loading. If this persists, please check your connection.</div>';
-    return;
-  }
-  paypal.Buttons({
-    style: { layout:'vertical', color:'blue', shape:'rect', label:'donate', height:46 },
-    createOrder: (data, actions) => {
-      const amt = parseFloat(selectedAmount);
-      if (!amt || amt < 1) { showToast('Please select or enter a valid amount.', 'error'); return Promise.reject(); }
-      return actions.order.create({
-        purchase_units: [{ description: "Aldrian's Hospital Bill", amount: { value: amt.toFixed(2), currency_code: 'USD' } }],
-        application_context: { shipping_preference: 'NO_SHIPPING' }
-      });
-    },
-    onApprove: async (data, actions) => {
-      const order  = await actions.order.capture();
-      const amount = parseFloat(order.purchase_units[0].amount.value);
-      const isAnon = document.getElementById('anon-check').checked;
-      const name   = isAnon ? 'Anonymous' : (document.getElementById('donor-name').value.trim() || 'Anonymous');
-      const msg    = document.getElementById('donor-message').value.trim();
-      await saveDonation({ order_id: order.id, amount, donor_name: name, message: msg || null, status: 'completed' });
-      showToast('Salamat! Thank you for your donation.', 'success');
-      document.getElementById('donor-name').value    = '';
-      document.getElementById('donor-message').value = '';
-      document.getElementById('anon-check').checked  = false;
-      document.getElementById('donor-name').disabled = false;
-    },
-    onError:  err => { console.error(err); showToast('Something went wrong. Please try again.', 'error'); },
-    onCancel: ()  => showToast('Donation cancelled.', '')
-  }).render('#paypal-button-container');
-}
-
-async function saveDonation(row) {
-  if (!db) return;
-  try { const { error } = await db.from('donations').insert([row]); if (error) console.warn(error.message); }
-  catch(e) { console.warn('Save failed:', e); }
-}
-
-function showToast(msg, type) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.className = 'toast ' + (type || '');
-  t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 4500);
-}
-
-function timeAgo(ts) {
-  if (!ts) return '';
-  const s = (Date.now() - new Date(ts)) / 1000;
-  if (s < 60) return 'Just now';
-  if (s < 3600) return Math.floor(s/60) + ' min ago';
-  if (s < 86400
+</script>
+</body>
+</html>
