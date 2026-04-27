@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Aldrian Recover from Dengue | Campaign Expired | I Fund Pinoy Life</title>
+  <meta name="description" content="Nicyl Loyola is raising $2,000 to pay her son Aldrian's hospitalization bill after he was admitted for dengue. Every donation helps bring him home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white:      #ffffff;
+      --off-white:  #f6f6f5;
+      --light:      #eeeeec;
+      --border:     #e0deda;
+      --border-lt:  #eae8e4;
+      --muted:      #8a8680;
+      --body:       #44403c;
+      --heading:    #18160f;
+      --blue:       #1a56a0;
+      --blue-lt:    #edf3fb;
+      --blue-dk:    #133d76;
+      --green:      #1a6040;
+      --green-lt:   #eaf4ef;
+      --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md:  0 6px 24px rgba(0,0,0,0.1);
+      --radius:     12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--off-white);
+      color: var(--body);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    .nav {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      height: 58px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 32px; height: 32px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.2; }
+    .nav-logo-name { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--heading); line-height: 1; }
+    .nav-logo-sub  { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
+    .nav-secure { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+    .nav-secure svg { width: 12px; height: 12px; stroke: var(--muted); fill: none; stroke-width: 2; }
+
+    /* PAGE */
+    .page { max-width: 1060px; margin: 0 auto; padding: 28px 16px 80px; }
+    @media(min-width: 860px){ .page { padding: 40px 28px 80px; } }
+    .layout { display: flex; flex-direction: column; gap: 20px; }
+    @media(min-width: 860px){
+      .layout { flex-direction: row; align-items: start; gap: 36px; }
+      .main-col { flex: 1; min-width: 0; }
+      .sidebar  { width: 360px; flex-shrink: 0; position: sticky; top: 72px; }
+    }
+
+    /* CARD */
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+    /* TITLE BLOCK */
+    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 800; color: var(--heading); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 18px; }
+
+    /* ORGANIZER */
+    .organizer { display: flex; align-items: center; gap: 14px; padding: 14px 18px; margin-bottom: 14px; }
+    .org-av { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-lt); border: 1.5px solid #c5d9f2; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--blue); flex-shrink: 0; }
+    .org-name { font-weight: 700; font-size: 14px; color: var(--heading); }
+    .org-sub  { font-size: 12px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 4px; }
+    .org-sub svg { width: 11px; height: 11px; stroke: var(--green); fill: none; stroke-width: 2.4; }
+    .org-verified { font-size: 11px; color: var(--green); font-weight: 600; }
+
+    /* TRUST */
+    .trust-bar { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+    .trust-badge { display: flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 11.5px; font-weight: 500; color: var(--body); }
+    .trust-badge svg { width: 12px; height: 12px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+    /* PROGRESS */
+    .progress-box { padding: 22px; }
+    .raised-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+    .raised-amount { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 800; color: var(--heading); }
+    .raised-of { font-size: 14px; color: var(--muted); }
+    .raised-sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .track { height: 9px; background: var(--light); border-radius: 100px; overflow: hidden; margin-bottom: 16px; }
+    .track-fill { height: 100%; width: 0%; background: var(--blue); border-radius: 100px; transition: width 1.6s cubic-bezier(.16,1,.3,1); }
+    .pstats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border-lt); padding-top: 14px; }
+    .pstat { padding: 0 8px; }
+    .pstat:first-child { padding-left: 0; }
+    .pstat + .pstat { border-left: 1px solid var(--border-lt); }
+    .pstat-val   { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--heading); display: block; }
+    .pstat-label { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+    /* STORY */
+    .story-box { padding: 26px 22px; }
+    @media(min-width: 860px){ .story-box { padding: 30px 30px; } }
+    .sec-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: var(--heading); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border-lt); }
+    .story-lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--heading); line-height: 1.75; margin-bottom: 20px; padding: 14px 16px; background: var(--blue-lt); border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; }
+    .story-box p { font-size: 15px; line-height: 1.9; color: var(--body); margin-bottom: 16px; }
+    .story-box p:last-child { margin-bottom: 0; }
+    .story-box strong { color: var(--heading); font-weight: 600; }
+
+    /* FAQ */
+    .faq-box { padding: 22px; }
+    .faq-item { padding: 13px 0; border-bottom: 1px solid var(--border-lt); }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-q { font-size: 14px; font-weight: 700; color: var(--heading); margin-bottom: 5px; }
+    .faq-a { font-size: 14px; color: var(--body); line-height: 1.75; }
+
+    /* MESSAGES */
+    .messages-box { padding: 22px; }
+    .msg-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; }
+    .msg-item { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--border-lt); animation: fadein 0.3s ease; }
+    @keyframes fadein { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+    .msg-item:first-child { padding-top: 0; }
+    .msg-item:last-child  { border-bottom: none; }
+    .msg-av { width: 34px; height: 34px; border-radius: 50%; background: var(--blue-lt); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: var(--blue); flex-shrink: 0; }
+    .msg-right { flex: 1; min-width: 0; }
+    .msg-top { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .msg-name { font-weight: 600; font-size: 13.5px; color: var(--heading); }
+    .msg-amt  { font-weight: 700; font-size: 12.5px; color: var(--blue); white-space: nowrap; }
+    .msg-when { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .msg-text { font-size: 13.5px; color: var(--body); margin-top: 6px; line-height: 1.65; font-style: italic; border-left: 2px solid var(--border); padding-left: 10px; }
+    .msg-placeholder { font-size: 14px; color: var(--muted); }
+
+    /* DONATE CARD */
+    .donate-card { padding: 22px; box-shadow: var(--shadow-md) !important; }
+    .donate-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--heading); margin-bottom: 4px; }
+    .donate-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .field-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 7px; }
+    .amt-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-bottom: 14px; }
+    .amt-btn {
+      border: 1.5px solid var(--border); background: var(--off-white);
+      border-radius: 8px; padding: 11px 4px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+      color: var(--body); cursor: pointer; text-align: center;
+      transition: all 0.15s; -webkit-tap-highlight-color: transparent;
+    }
+    .amt-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
+    .amt-btn.active { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
+    .field-row { display: flex; align-items: center; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--white); transition: border-color 0.15s; margin-bottom: 16px; }
+    .field-row:focus-within { border-color: var(--blue); }
+    .field-prefix { padding: 0 12px; font-size: 14px; font-weight: 600; color: var(--body); background: var(--light); border-right: 1.5px solid var(--border); height: 44px; display: flex; align-items: center; flex-shrink: 0; }
+    .field-row input { flex:1; border:none; outline:none; background:transparent; padding:0 12px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:var(--heading); height:44px; }
+    .field-row input::placeholder { color: var(--muted); }
+    .field-solo { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; background:var(--white); transition:border-color 0.15s; }
+    .field-solo:focus-within { border-color: var(--blue); }
+    .field-solo input { flex:1; border:none; outline:none; background:transparent; padding:0 12px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:var(--heading); height:44px; }
+    .field-solo input::placeholder { color: var(--muted); }
+    .name-anon { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; margin-bottom:16px; }
+    .anon-label { display:flex; align-items:center; gap:5px; font-size:13px; color:var(--muted); cursor:pointer; white-space:nowrap; }
+    .anon-label input[type="checkbox"] { accent-color: var(--blue); width:14px; height:14px; cursor:pointer; }
+    .msg-textarea { width:100%; border:1.5px solid var(--border); border-radius:8px; padding:11px 13px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--body); background:var(--white); resize:vertical; min-height:76px; max-height:140px; outline:none; line-height:1.6; transition:border-color 0.15s; margin-bottom:20px; }
+    .msg-textarea:focus { border-color: var(--blue); }
+    .msg-textarea::placeholder { color: var(--muted); }
+    #paypal-button-container { min-height: 46px; }
+    .paypal-placeholder { border:1px dashed var(--border); border-radius:8px; padding:16px; text-align:center; font-size:13px; color:var(--muted); line-height:1.6; }
+    .secure-note { margin-top:12px; text-align:center; font-size:11px; color:var(--muted); display:flex; align-items:center; justify-content:center; gap:5px; }
+    .secure-note svg { width:11px; height:11px; stroke:var(--muted); fill:none; stroke-width:2; }
+
+    /* INFO CARD */
+    .info-card { padding: 16px 18px; }
+    .info-card p { font-size:13px; color:var(--muted); line-height:1.7; }
+    .info-card p + p { margin-top:8px; }
+
+    /* TOAST */
+    .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(70px); padding:12px 22px; border-radius:8px; font-size:14px; font-weight:500; z-index:999; box-shadow:0 4px 20px rgba(0,0,0,0.18); transition:transform 0.35s cubic-bezier(.16,1,.3,1); white-space:nowrap; background:var(--heading); color:#fff; max-width:calc(100vw - 32px); text-align:center; }
+    .toast.success { background: var(--green); }
+    .toast.error   { background: #b33030; }
+    .toast.show    { transform: translateX(-50%) translateY(0); }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* CLOSED BANNER */
+    .closed-banner {
+      background: linear-gradient(135deg, #1a6040 0%, #1e7a4d 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 4px 18px rgba(26,96,64,0.22);
+    }
+    .closed-banner-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .closed-banner-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2.4; }
+    .closed-banner-body {}
+    .closed-banner-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; margin-bottom: 5px; }
+    .closed-banner-text  { font-size: 14px; opacity: 0.92; line-height: 1.65; }
+
+    /* TOTAL COLLECTED BOX */
+    .total-collected {
+      background: var(--green-lt);
+      border: 1.5px solid #a3d4b8;
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .total-collected-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 6px; }
+    .total-collected-amount { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: var(--green); line-height: 1; margin-bottom: 4px; }
+    .total-collected-sub { font-size: 13px; color: var(--green); opacity: 0.8; }
+
+    /* CLOSED SIDEBAR */
+    .closed-sidebar {
+      background: var(--green-lt);
+      border: 1.5px solid #a3d4b8;
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+    }
+    .closed-sidebar-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+    .closed-sidebar-text { font-size: 14px; color: var(--body); line-height: 1.7; }
+    .closed-sidebar-total { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 800; color: var(--green); margin: 12px 0 4px; }
+    .closed-sidebar-total-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 0;
+    }
+    .site-footer-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--heading); margin-bottom: 6px; }
+    .site-footer-text { font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .site-footer-text a { color: var(--blue); text-decoration: none; font-weight: 600; }
+
+    /* MOBILE IMPROVEMENTS */
+    @media(max-width: 480px) {
+      .closed-banner { padding: 16px 14px; gap: 12px; }
+      .closed-banner-icon { width: 36px; height: 36px; }
+      .closed-banner-title { font-size: 15px; }
+      .closed-banner-text { font-size: 13px; }
+      .total-collected-amount { font-size: 30px; }
+      .nav { padding: 0 14px; }
+      .nav-logo-name { font-size: 13px; }
+      .page { padding: 18px 12px 60px; }
+      .progress-box { padding: 16px; }
+      .story-box { padding: 20px 16px; }
+      .faq-box { padding: 16px; }
+      .messages-box { padding: 16px; }
+      .closed-sidebar { padding: 18px 14px; }
+      .info-card { padding: 14px; }
+      .pstats { gap: 0; }
+      .pstat-val { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" role="banner">
+  <a href="index.html" class="nav-logo" aria-label="I Fund Pinoy Life Home">
+    <div class="nav-logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.454 4.068 1 7.5 1c1.977 0 3.848 1.002 4.5 2.5C12.652 2.002 14.523 1 16.5 1 19.932 1 23 3.454 23 7.191c0 4.105-5.37 8.863-11 14.402z"/></svg>
+    </div>
+    <div class="nav-logo-name">
+      I Fund Pinoy Life
+      <span class="nav-logo-sub">Fundraising for Personal Causes</span>
+    </div>
+  </a>
+  <div class="nav-secure">
+    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Secured by PayPal
+  </div>
+</header>
+
+<!-- PAGE -->
+<main class="page" id="main-content" role="main">
+  <div class="layout">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- CLOSED BANNER -->
+      <div class="closed-banner" role="alert">
+        <div class="closed-banner-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="closed-banner-body">
+          <div class="closed-banner-title">This Campaign Has Expired</div>
+          <div class="closed-banner-text">This campaign is already expired. Donations are no longer being accepted. Thank you to every single person who gave, shared, and prayed for Aldrian and our family. Your generosity made a real difference.</div>
+        </div>
+      </div>
+
+      <!-- TOTAL COLLECTED -->
+      <div class="total-collected" role="region" aria-label="Total amount collected">
+        <div class="total-collected-label">Total Amount Collected</div>
+        <div class="total-collected-amount">$456</div>
+        <div class="total-collected-sub">from 9 generous donors. Thank you!</div>
+      </div>
+
+      <p class="page-eyebrow">Medical Fundraiser · Campaign Expired</p>
+      <h1 class="page-title">Help Aldrian Recover from Dengue and Come Home</h1>
+
+      <!-- Organizer -->
+      <div class="card organizer" role="region" aria-label="Organizer">
+        <div class="org-av" aria-hidden="true">N</div>
+        <div>
+          <div class="org-name">Nicyl Loyola</div>
+          <div class="org-sub">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="org-verified">Verified by I Fund Pinoy Life</span>
+            &nbsp;·&nbsp; Organizer and Aldrian's Mother
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust -->
+      <div class="trust-bar" role="region" aria-label="Trust indicators">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          PayPal Protected
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Identity Verified
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          SSL Encrypted
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Hospital Docs on File
+        </div>
+      </div>
+
+      <section class="card progress-box" aria-label="Fundraising progress">
+        <div class="raised-row">
+          <div class="raised-amount" id="raised-display">$456</div>
+          <div class="raised-of">raised of $2,000 goal</div>
+        </div>
+        <div class="raised-sub">from <strong id="donor-count">9</strong> donors</div>
+        <div class="track" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
+          <div class="track-fill" id="track-fill" style="width:23%"></div>
+        </div>
+        <div class="pstats">
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-donors">9</span>
+            <span class="pstat-label">Donors</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-avg">$51</span>
+            <span class="pstat-label">Avg. Gift</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val">Expired</span>
+            <span class="pstat-label">Status</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <article class="card story-box" aria-label="Fundraiser story">
+        <h2 class="sec-title">Aldrian's Story</h2>
+
+        <div class="story-lead" role="note">
+          "My name is Nicyl Loyola. I am Aldrian's mother. He is in the hospital right now with dengue and I cannot afford to pay the bill. I am asking for your help."
+        </div>
+
+        <p>Aldrian is my eldest son. He has always been the responsible one in our family. He works hard, he does not complain, and he has always looked out for his younger siblings. That is just who he is.</p>
+
+        <p>A few days ago, Aldrian came home with a high fever that would not go away. We brought him to the hospital and the doctors confirmed he has dengue. His platelet count dropped quickly and he needed to be admitted right away. He is being monitored and treated, and we are praying for his recovery every day.</p>
+
+        <p><strong>The hospital bill has been growing and I do not have the means to pay it.</strong> I work to support our family but what I earn is not enough for something like this. I have already spent what little we had. The hospital is waiting for payment, and I cannot bring my son home until that is settled.</p>
+
+        <p>I did not want to ask for help. But I have no other choice right now and I want to do right by my son. He has always worked hard for this family and I want to be there for him the same way.</p>
+
+        <p><strong>The goal is $2,000</strong>, which covers the full hospital bill including his room, medicines, IV fluids, blood tests, and doctor's fees. Every dollar you give goes directly to bringing Aldrian home.</p>
+
+        <p>If you cannot give, please share this page. It costs nothing and it might reach someone who can help. Thank you for reading this. God bless you.</p>
+      </article>
+
+      <!-- FAQ -->
+      <section class="card faq-box" aria-label="Frequently asked questions">
+        <h2 class="sec-title">Common Questions</h2>
+        <div class="faq-item">
+          <div class="faq-q">Is this fundraiser verified?</div>
+          <div class="faq-a">Yes. I Fund Pinoy Life has verified Nicyl Loyola's identity and reviewed the hospital admission documents for Aldrian. This campaign is genuine.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where does the money go?</div>
+          <div class="faq-a">All donations go directly to paying Aldrian's hospitalization bill. Funds are released to the family to settle the hospital account. Nothing is kept by I Fund Pinoy Life beyond PayPal's standard processing fee.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I donate from outside the Philippines?</div>
+          <div class="faq-a">Yes. PayPal accepts donations from most countries. The goal is in US dollars and PayPal will handle the currency conversion from your local currency automatically.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I donate anonymously?</div>
+          <div class="faq-a">Yes. Check the Anonymous box in the form below and your name will not appear publicly on this page.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Will I get a receipt?</div>
+          <div class="faq-a">Yes. PayPal sends an automatic confirmation and receipt to your email address immediately after each completed donation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if the goal is exceeded?</div>
+          <div class="faq-a">Any amount raised beyond $2,000 will go toward Aldrian's follow-up medications and recovery needs after discharge. Nothing extra is kept by I Fund Pinoy Life.</div>
+        </div>
+      </section>
+
+      <!-- Messages -->
+      <section class="card messages-box" aria-label="Words of support">
+        <h2 class="sec-title">Words of Support</h2>
+        <p class="msg-meta" id="msg-meta">9 messages</p>
+        <div id="messages-feed">
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">M</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Maria S.</span><span class="msg-amt">$100</span></div>
+              <div class="msg-when">3 days ago</div>
+              <div class="msg-text">Praying for Aldrian's speedy recovery. Stay strong, Nicyl!</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">J</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Jose R.</span><span class="msg-amt">$50</span></div>
+              <div class="msg-when">3 days ago</div>
+              <div class="msg-text">God bless your family. Get well soon, Aldrian.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">A</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Anonymous</span><span class="msg-amt">$25</span></div>
+              <div class="msg-when">4 days ago</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">C</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Carla T.</span><span class="msg-amt">$75</span></div>
+              <div class="msg-when">4 days ago</div>
+              <div class="msg-text">Sending love and prayers to your family.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">R</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Ramon L.</span><span class="msg-amt">$50</span></div>
+              <div class="msg-when">5 days ago</div>
+              <div class="msg-text">Hang in there! You have a whole community behind you.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">G</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Grace M.</span><span class="msg-amt">$30</span></div>
+              <div class="msg-when">5 days ago</div>
+              <div class="msg-text">Small amount but given with love. Get well soon!</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">A</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Anonymous</span><span class="msg-amt">$56</span></div>
+              <div class="msg-when">6 days ago</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">L</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Liza B.</span><span class="msg-amt">$40</span></div>
+              <div class="msg-when">6 days ago</div>
+              <div class="msg-text">Nicyl, you are a wonderful mother. God will provide.</div>
+            </div>
+          </div>
+          <div class="msg-item" role="article">
+            <div class="msg-av" aria-hidden="true">E</div>
+            <div class="msg-right">
+              <div class="msg-top"><span class="msg-name">Edwin V.</span><span class="msg-amt">$30</span></div>
+              <div class="msg-when">7 days ago</div>
+              <div class="msg-text">Praying for a full and fast recovery for Aldrian.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <!-- end main-col -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" role="complementary" aria-label="Campaign status">
+
+      <div class="closed-sidebar card">
+        <div class="closed-sidebar-title">Campaign Expired</div>
+        <div class="closed-sidebar-total">$456</div>
+        <div class="closed-sidebar-total-label">Total Collected from 9 donors</div>
+        <br>
+        <div class="closed-sidebar-text">
+          This campaign has already expired. Donations are no longer being accepted.<br><br>
+          <strong>Thank you</strong> to every kind soul who contributed. Aldrian and his family are deeply grateful for your love and support.
+        </div>
+      </div>
+
+      <div class="card info-card">
+        <p>All donations were processed securely through PayPal. Funds go directly to Nicyl Loyola to pay Aldrian's hospital bill.</p>
+        <p>This fundraiser is verified and managed by <strong>I Fund Pinoy Life</strong>. For questions, email <a href="mailto:support@ifundpinoylife.com" style="color:var(--blue);text-decoration:none;font-weight:600;">support@ifundpinoylife.com</a> or call <a href="tel:0283515854" style="color:var(--blue);text-decoration:none;font-weight:600;">02 8351 5854</a>.</p>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-logo">I Fund Pinoy Life</div>
+  <div class="site-footer-text">
+    Fundraising for Personal Causes in the Philippines.<br>
+    For support, email <a href="mailto:support@ifundpinoylife.com">support@ifundpinoylife.com</a> or call <a href="tel:0283515854">02 8351 5854</a>.<br>
+    &copy; 2025 I Fund Pinoy Life. All rights reserved.
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+<script>
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
